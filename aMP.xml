@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.MP.aMP" >
+    <select id="selectAllByToppings" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List"/>
+        from pizza
+        <where>
+            <if test="toppings != null">
+                toppings = #{toppings}
+            </if>
+        </where>
+    </select>
+</mapper>
